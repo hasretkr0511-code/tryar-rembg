@@ -11,7 +11,6 @@ def remove_bg():
     url = request.args.get('url')
     if not url:
         return 'url parametresi gerekli', 400
-    
     try:
         r = requests.get(url, timeout=10)
         img = Image.open(io.BytesIO(r.content))
